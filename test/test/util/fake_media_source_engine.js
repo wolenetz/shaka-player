@@ -96,6 +96,11 @@ shaka.test.FakeMediaSourceEngine = function(segmentData, drift) {
   this.appendBuffer = jasmine.createSpy('appendBuffer')
                           .and.callFake(this.appendBufferImpl.bind(this));
 
+  // BIG TODO: is this needed and correct?
+  /** @type {!jasmine.Spy} */
+  this.changeType = jasmine.createSpy('changeType')
+      .and.returnValue(Promise.resolve());
+
   /** @type {!jasmine.Spy} */
   this.clear = jasmine.createSpy('clear')
                    .and.callFake(this.clearImpl_.bind(this));

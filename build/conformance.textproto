@@ -42,7 +42,8 @@ requirement: {
               'BanUnknownTypedClassPropsReferences'
   error_message: 'Using properties of unknown types is not allowed; add an '
                  'explicit type to the variable.'
-  whitelist_regexp: 'demo/'
+  # HACK a suppression due to missing SourceBuffer.changeType definition.
+  whitelist_regexp: 'demo/|lib/media/media_source_engine'
 }
 requirement {
   type: CUSTOM
